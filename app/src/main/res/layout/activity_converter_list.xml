@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dbg"
+    tools:context=".ConverterList">
+
+    <Button
+        android:id="@+id/areaBtnn"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="151dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/background_button"
+        android:backgroundTint="#733C2B"
+        android:backgroundTintMode="src_over"
+        android:fontFamily="monospace"
+        android:text="Area"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/weightBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/weightBtn"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginBottom="67dp"
+        android:background="@drawable/background_button"
+        android:backgroundTint="#733C2B"
+        android:backgroundTintMode="src_over"
+        android:fontFamily="monospace"
+        android:text="Weight"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/capacityBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/areaBtnn" />
+
+    <Button
+        android:id="@+id/capacityBtn"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="106dp"
+        android:background="@drawable/background_button"
+        android:backgroundTint="#733C2B"
+        android:backgroundTintMode="src_over"
+        android:fontFamily="monospace"
+        android:text="Capacity"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weightBtn" />
+</androidx.constraintlayout.widget.ConstraintLayout>

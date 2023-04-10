@@ -14,6 +14,8 @@ public class Dashboard extends AppCompatActivity {
     Button button2;
 
     Button tempButton;
+
+    Button converterBtn;
     VideoView videoView;
 
     @Override
@@ -55,6 +57,15 @@ public class Dashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(Dashboard.this,TempMeasure.class);
+                startActivity(intent);
+            }
+        });
+
+        converterBtn = findViewById(R.id.converter);
+        converterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this,ConverterList.class);
                 startActivity(intent);
             }
         });
