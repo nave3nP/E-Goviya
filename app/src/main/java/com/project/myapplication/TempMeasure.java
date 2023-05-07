@@ -33,6 +33,7 @@ public class TempMeasure extends AppCompatActivity implements SensorEventListene
 
         }else {
             textView.setText("Error getting Data!");
+            tempTips.setText(" ");
             isTemperatureSensorAvailable= false;
         }
 
@@ -51,7 +52,7 @@ public class TempMeasure extends AppCompatActivity implements SensorEventListene
                     "Be prepared with a fully stocked first aid kit and emergency supplies\n\n" +
                     "Know the signs and symptoms of hypothermia and frostbite, and seek medical attention immediately if necessary.");
         }else {
-            tempTips.setText("Wear lightweight, loose-fitting clothing made of breathable fabric, such as cotton or linen, to stay cool and allow sweat to evaporate\n"+
+            tempTips.setText("Wear lightweight, loose-fitting clothing made of breathable fabric, such as cotton or linen, to stay cool and allow sweat to evaporate\n\n"+
                     "Use sunscreen with a high SPF and wear a wide-brimmed hat to protect your skin from the sun's harmful rays\n\n"+
                             "Drink plenty of water and other hydrating fluids to prevent dehydration and heat exhaustion\n\n"+
                             "Take frequent breaks in a shaded or air-conditioned area to cool down and rest\n\n"+

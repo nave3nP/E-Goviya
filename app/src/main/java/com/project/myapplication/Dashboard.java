@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 public class Dashboard extends AppCompatActivity {
@@ -15,7 +17,7 @@ public class Dashboard extends AppCompatActivity {
 
     Button tempButton;
 
-    Button converterBtn;
+    Button converterBtn,profitBtn;
     VideoView videoView;
 
     @Override
@@ -70,6 +72,14 @@ public class Dashboard extends AppCompatActivity {
             }
         });
 
+        profitBtn = findViewById(R.id.ProfitCal);
+        profitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this,ProfitCal.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override

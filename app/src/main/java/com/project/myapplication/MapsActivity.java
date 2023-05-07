@@ -52,7 +52,7 @@ private ActivityMapsBinding binding;
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        LatLng Ibbagamuwa= new LatLng(7.478048813657549, 80.36580562961348);
+        LatLng Ibbagamuwa= new LatLng(7.55570711239234, 80.45553348361942);
         LatLng Ehetuwewa= new LatLng(7.9430625250001015, 80.34333942933829);
         LatLng Galgamuwa= new LatLng(8.003243212451967, 80.27913808103531);
         LatLng Dethawa= new LatLng(7.915519263102704, 80.24137258187238);

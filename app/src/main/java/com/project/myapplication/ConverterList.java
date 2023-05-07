@@ -1,7 +1,7 @@
 package com.project.myapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -32,6 +32,16 @@ public class ConverterList extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent;
                 intent = new Intent(ConverterList.this,WeightConverter.class);
+                startActivity(intent);
+            }
+        });
+
+        capacityBtn = findViewById(R.id.capacityBtn);
+        capacityBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(ConverterList.this,VolumeConverter.class);
                 startActivity(intent);
             }
         });
