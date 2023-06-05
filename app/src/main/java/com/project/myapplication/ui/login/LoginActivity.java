@@ -17,13 +17,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.project.myapplication.AdminActivity;
 import com.project.myapplication.Dashboard;
+import com.project.myapplication.PasswordResetActivity;
 import com.project.myapplication.R;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText emailTextView, passwordTextView;
     private Button Btn;
-    private TextView RegPageBtn;
+    private TextView RegPageBtn,ResetScnBtn;
 
 
     private FirebaseAuth mAuth;
@@ -40,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordTextView = findViewById(R.id.passwordReg);
         Btn = findViewById(R.id.LoginBtn);
         RegPageBtn =findViewById(R.id.RegScreenBtn);
+        ResetScnBtn = findViewById(R.id.resetButton);
 
 
 
@@ -56,6 +59,14 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(LoginActivity.this,RegActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ResetScnBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LoginActivity.this, PasswordResetActivity.class);
                 startActivity(intent);
             }
         });
@@ -109,14 +120,24 @@ public class LoginActivity extends AppCompatActivity {
                                                     "Login successful!!",
                                                     Toast.LENGTH_LONG)
                                             .show();
+                                    String userId = mAuth.getCurrentUser().getUid();
 
 
                                     // if sign-in is successful
                                     // intent to dashboard activity
-                                    Intent intent
-                                            = new Intent(LoginActivity.this,
-                                            Dashboard.class);
-                                    startActivity(intent);
+                                    if (userId.equals("sntz9NzFs7cYu6nkFQ0WEt0vAkU2")){
+                                        Intent intent
+                                                = new Intent(LoginActivity.this,
+                                                AdminActivity.class);
+                                        startActivity(intent);
+                                    }
+                                    else{
+                                        Intent intent
+                                                = new Intent(LoginActivity.this,
+                                                Dashboard.class);
+                                        startActivity(intent);
+                                    }
+
                                 }
 
                                 else {

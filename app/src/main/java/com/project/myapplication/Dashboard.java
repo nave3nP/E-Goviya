@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
@@ -17,8 +18,10 @@ public class Dashboard extends AppCompatActivity {
 
     Button tempButton;
 
-    Button converterBtn,profitBtn;
+    Button converterBtn,profitBtn,newsButton;
     VideoView videoView;
+
+    ImageView profileBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +83,24 @@ public class Dashboard extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        newsButton =findViewById(R.id.newsBtn);
+        newsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Dashboard.this,News.class);
+                startActivity(intent);
+            }
+        });
+        profileBtn =findViewById(R.id.userProfileBtn);
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(Dashboard.this,Profile.class);
+                startActivity(intent);
+            }
+        }
+        );
     }
 
     @Override
