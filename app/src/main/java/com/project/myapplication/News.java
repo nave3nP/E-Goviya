@@ -62,7 +62,7 @@ public class News extends AppCompatActivity {
                     return;
                 }
                 for(DocumentChange dc : value.getDocumentChanges()){
-                    if(dc.getType()==DocumentChange.Type.ADDED){
+                    if(dc.getType()==DocumentChange.Type.ADDED || dc.getType()==DocumentChange.Type.REMOVED){
                         newsArrayList.add(dc.getDocument().toObject(NewsContainer.class));
                     }
 

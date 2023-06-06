@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -42,6 +43,7 @@ public class NewsUpdate extends AppCompatActivity {
                 Map<String,Object> news = new HashMap<>();
                 news.put("Title",Title);
                 news.put("Description",Description);
+                news.put("Time", FieldValue.serverTimestamp());
 
                 db.collection("news")
                         .add(news)

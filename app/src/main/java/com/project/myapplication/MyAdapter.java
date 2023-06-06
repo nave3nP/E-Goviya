@@ -9,7 +9,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
@@ -41,6 +43,11 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.Title.setText(newsContainer.Title);
         holder.Description.setText(newsContainer.Description);
 
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss", Locale.getDefault());
+        String formattedDate = sdf.format(newsContainer.getTime());
+        holder.Time.setText(formattedDate);
+
+
     }
 
     @Override
@@ -49,11 +56,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView Title,Description;
+        TextView Title,Description,Time;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             Title = itemView.findViewById(R.id.titleNews);
             Description = itemView.findViewById(R.id.descriptionNews);
+            Time = itemView.findViewById(R.id.Time);
         }
     }
 }
